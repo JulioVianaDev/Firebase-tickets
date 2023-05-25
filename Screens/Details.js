@@ -4,7 +4,7 @@ import {firebase}from '../config';
 import { useNavigation } from '@react-navigation/native';
 const Details = ({route}) => {
     const todoRef = firebase.firestore().collection('todos');
-    const [textHeading,onChangeHeadingText] = useState(route.params.item.name);
+    const [textHeading,onChangeHeadingText] = useState(route.params.item.heading);
     const navigation = useNavigation();
     
     const updateTodo = ()=>{
@@ -17,7 +17,7 @@ const Details = ({route}) => {
                     navigation.navigate('Home')
                 })
                 .catch(error=>{
-                    console.log(error)
+                    alert(error)
                 })
         }
     }

@@ -75,8 +75,7 @@ const Home = () => {
             <TouchableOpacity style={styles.button} onPress={addTodo}>
                 <Text style={styles.buttonText}>Add</Text>
             </TouchableOpacity>
-
-            
+  
         </View><FlatList
                 data={todos}
                 numColumns={1}
