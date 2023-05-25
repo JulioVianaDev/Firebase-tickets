@@ -76,7 +76,8 @@ const Home = () => {
                 <Text style={styles.buttonText}>Add</Text>
             </TouchableOpacity>
 
-            <FlatList
+            
+        </View><FlatList
                 data={todos}
                 numColumns={1}
                 renderItem={({item})=>(
@@ -86,21 +87,20 @@ const Home = () => {
                             onPress={()=>navigation.navigate('Details',{item})}
                         >
                             <FontAwesome
-                                name='trash-io'
+                                name='trash'
                                 color='red'
                                 onPress={()=>deleteTodo(item)}
                                 style={styles.todoIcon} 
                             />
                             <View stlyes={styles.innerContainer}>
                                 <Text style={styles.itemHeading} >
-                                    {item.heading[0].toupperCase()+ item.heading.slice(1)}
+                                    {item.heading[0].toUpperCase()+ item.heading.slice(1)}
                                 </Text>
                             </View>
                         </Pressable>
                     </View>
                 )}
             />
-        </View>
     </View>
   )
 }
@@ -157,7 +157,8 @@ const styles = StyleSheet.create({
     },
     todoIcon:{
         marginTop:5,
-        fontSize:20,
-        marginLeft:14
+        fontSize: 20,
+        marginLeft:14,
+        marginRight: 14
     }
 })
