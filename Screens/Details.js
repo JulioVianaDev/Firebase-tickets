@@ -8,7 +8,7 @@ const Details = ({route}) => {
     const navigation = useNavigation();
     
     const updateTodo = ()=>{
-        if(textHeading && textHeading.lenght > 0){
+        if(textHeading && textHeading.length > 0){
             todoRef
                 .doc(route.params.item.id)
                 .update({

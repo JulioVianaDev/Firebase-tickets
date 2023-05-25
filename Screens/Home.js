@@ -76,7 +76,8 @@ const Home = () => {
                 <Text style={styles.buttonText}>Add</Text>
             </TouchableOpacity>
   
-        </View><FlatList
+        </View>
+        <FlatList
                 data={todos}
                 numColumns={1}
                 renderItem={({item})=>(
