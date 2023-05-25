@@ -42,6 +42,7 @@ const Details = ({route}) => {
 
 export default Details
 
+
 const styles = StyleSheet.create({
     container:{
         marginTop: 80,
