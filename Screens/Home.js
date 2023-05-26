@@ -16,10 +16,11 @@ const Home = () => {
                 querySnapShot=>{
                     const todos = []
                     querySnapShot.forEach((doc)=>{
-                        const {heading} = doc.data()
+                        const {nome,ocorrido} = doc.data()
                         todos.push({
                             id: doc.id,
-                            heading,
+                            nome,
+                            ocorrido
                         })
                     })
                     setTodos(todos)
@@ -44,7 +45,8 @@ const Home = () => {
             //pegar a data
             const timestamp = firebase.firestore.FieldValue.serverTimestamp();
             const data ={
-                heading: addData.nome,
+                nome: addData.nome,
+                ocorrido: addData.ocorrido,
                 createdAt: timestamp
             }
             todoRef
@@ -66,8 +68,17 @@ const Home = () => {
                 style={styles.input}
                 placeholder='Add a new todo'
                 placeholderTextColor='#aaaaaa'
-                onChangeText={(heading)=>setAddData({nome: heading})}
+                onChangeText={(heading)=>setAddData({...addData,nome: heading})}
                 value={addData.nome}
+                underlineColorAndroid='transparent'
+                autoCapitalize='none'
+            />
+            <TextInput
+                style={styles.input}
+                placeholder='Add a new todo'
+                placeholderTextColor='#aaaaaa'
+                onChangeText={(ocorrido)=>setAddData({...addData,ocorrido: ocorrido})}
+                value={addData.ocorrido}
                 underlineColorAndroid='transparent'
                 autoCapitalize='none'
             />
@@ -93,7 +104,10 @@ const Home = () => {
                             />
                             <View stlyes={styles.innerContainer}>
                                 <Text style={styles.itemHeading} >
-                                    {item.heading[0].toUpperCase()+ item.heading.slice(1)}
+                                    {item.nome[0].toUpperCase()+ item.nome.slice(1)}
+                                </Text>
+                                <Text style={styles.itemHeading} >
+                                    {item.ocorrido[0].toUpperCase()+ item.ocorrido.slice(1)}
                                 </Text>
                             </View>
                         </Pressable>
