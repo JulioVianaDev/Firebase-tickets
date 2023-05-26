@@ -24,6 +24,7 @@ const Details = ({route}) => {
     
     return (
         <View style={styles.container}>
+            
             <TextInput
                 style={styles.textField}
                 onChangeText={onChangeHeadingText}

@@ -9,7 +9,6 @@ const Home = () => {
     const todoRef = firebase.firestore().collection('todos');
     const [addData,setAddData] = useState('');
     const navigation = useNavigation()
-  
     useEffect(()=>{
         todoRef
             .orderBy('createdAt','desc')
@@ -61,6 +60,7 @@ const Home = () => {
     }
     return (
     <View style={{flex: 1}}>
+        
         <View style={styles.formContainer}>
             <TextInput
                 style={styles.input}
