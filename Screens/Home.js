@@ -6,8 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
     const [todos,setTodos] = useState([]);
-    const todoRef = firebase.firestore().collection('todos');
-    const [addData,setAddData] = useState('');
+    const todoRef = firebase.firestore().collection('chamados');
+    const [addData,setAddData] = useState({nome: '',ocorrido: ''});
     const navigation = useNavigation()
     useEffect(()=>{
         todoRef
@@ -40,11 +40,11 @@ const Home = () => {
 
     const addTodo=()=>{
         //check se tem um todo
-        if (addData && addData.length>0){
+        if (addData.nome && addData.nome.length>0){
             //pegar a data
             const timestamp = firebase.firestore.FieldValue.serverTimestamp();
             const data ={
-                heading: addData,
+                heading: addData.nome,
                 createdAt: timestamp
             }
             todoRef
@@ -66,11 +66,10 @@ const Home = () => {
                 style={styles.input}
                 placeholder='Add a new todo'
                 placeholderTextColor='#aaaaaa'
-                onChangeText={(heading)=>setAddData(heading)}
-                value={addData}
+                onChangeText={(heading)=>setAddData({nome: heading})}
+                value={addData.nome}
                 underlineColorAndroid='transparent'
                 autoCapitalize='none'
-
             />
             <TouchableOpacity style={styles.button} onPress={addTodo}>
                 <Text style={styles.buttonText}>Add</Text>
