@@ -5,30 +5,30 @@ import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
-    const [todos,setTodos] = useState([]);
-    const todoRef = firebase.firestore().collection('chamados');
+    const [chamados,setChamados] = useState([]);
+    const chamadoRef = firebase.firestore().collection('chamados');
     const [addData,setAddData] = useState({nome: '',ocorrido: ''});
     const navigation = useNavigation()
     useEffect(()=>{
-        todoRef
+        chamadoRef
             .orderBy('createdAt','desc')
             .onSnapshot(
                 querySnapShot=>{
-                    const todos = []
+                    const chamados = []
                     querySnapShot.forEach((doc)=>{
                         const {nome,ocorrido} = doc.data()
-                        todos.push({
+                        chamados.push({
                             id: doc.id,
                             nome,
                             ocorrido
                         })
                     })
-                    setTodos(todos)
+                    setChamados(chamados)
                 }
             )
     },[])
     const deleteTodo = (todos)=>{
-        todoRef
+        chamadoRef
             .doc(todos.id)
             .delete()
             .then(()=>{
@@ -49,10 +49,10 @@ const Home = () => {
                 ocorrido: addData.ocorrido,
                 createdAt: timestamp
             }
-            todoRef
+            chamadoRef
                 .add(data)
                 .then(()=>{
-                    setAddData('')
+                    setAddData({nome: '',ocorrido: ''})
                     Keyboard.dismiss();
                 })
                 .catch((error)=>{
@@ -88,7 +88,7 @@ const Home = () => {
   
         </View>
         <FlatList
-                data={todos}
+                data={chamados}
                 numColumns={1}
                 renderItem={({item})=>(
                     <View> 
