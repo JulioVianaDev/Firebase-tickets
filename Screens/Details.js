@@ -1,4 +1,4 @@
-import { View, Text,TextInput,StyleSheet,Pressable } from 'react-native'
+import { View, Text,TextInput,Pressable } from 'react-native'
 import React,{useState} from 'react'
 import { updateChamado } from '../functions/updateChamado';
 import { useNavigation } from '@react-navigation/native';

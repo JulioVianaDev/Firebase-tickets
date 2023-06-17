@@ -1,3 +1,5 @@
+import { StyleSheet } from "react-native"
+
 export const detailsStyles = StyleSheet.create({
   container:{
       marginTop: 80,
