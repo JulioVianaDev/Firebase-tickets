@@ -3,7 +3,7 @@ import React from 'react'
 import { chamadosListStyles } from '../styles/ChamadosList'
 import { FontAwesome } from '@expo/vector-icons';
 import { deleteChamado } from '../functions/deleteChamado';
-export default function ChamadosList(chamados,navigation) {
+export default function ChamadosList({chamados,navigation}) {
   return (
     <FlatList
         data={chamados}
