@@ -3,14 +3,14 @@ import React,{useState} from 'react'
 import {firebase}from '../config';
 import { useNavigation } from '@react-navigation/native';
 const Details = ({route}) => {
-    const todoRef = firebase.firestore().collection('todos');
+    const chamadosRef = firebase.firestore().collection('chamados');
     const [nomeText,setNomeText] = useState(route.params.item.nome);
     const [ocorridoText,setOcorridoText] = useState(route.params.item.ocorrido);
     const navigation = useNavigation();
     
     const updateTodo = ()=>{
         if(nomeText && nomeText.length > 0){
-            todoRef
+            chamadosRef
                 .doc(route.params.item.id)
                 .update({
                     ocorrido: ocorridoText,
