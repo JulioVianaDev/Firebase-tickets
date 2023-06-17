@@ -68,7 +68,7 @@ const Home = () => {
                 style={styles.input}
                 placeholder='Add a new todo'
                 placeholderTextColor='#aaaaaa'
-                onChangeText={(heading)=>setAddData({...addData,nome: heading})}
+                onChangeText={(nome)=>setAddData({...addData,nome: nome})}
                 value={addData.nome}
                 underlineColorAndroid='transparent'
                 autoCapitalize='none'
