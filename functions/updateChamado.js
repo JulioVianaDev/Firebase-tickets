@@ -1,10 +1,8 @@
 import { chamadosRef } from "../helpers/chamadosRef"
-import { useNavigation } from '@react-navigation/native';
-export const updateChamado = (nomeText,ocorridoText)=>{
-    const navigation = useNavigation();
+export const updateChamado = (nomeText,ocorridoText,id,navigation)=>{
     if(nomeText && nomeText.length > 0){
       chamadosRef
-        .doc(route.params.item.id)
+        .doc(id)
         .update({
             ocorrido: ocorridoText,
             nome: nomeText
