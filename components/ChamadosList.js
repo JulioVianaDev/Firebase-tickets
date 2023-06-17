@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-
+import { chamadosListStyles } from '../styles/ChamadosList'
 export default function ChamadosList(chamados) {
   return (
     <FlatList
@@ -9,11 +9,11 @@ export default function ChamadosList(chamados) {
         renderItem={({item})=>(
             <View> 
                 <Pressable
-                    style={styles.container}
+                    style={chamadosListStyles.container}
                     onPress={()=>navigation.navigate('Details',{item})}
                 >
-                    <View stlyes={styles.innerContainer}>
-                        <Text style={styles.itemHeading} >
+                    <View stlyes={chamadosListStyles.innerContainer}>
+                        <Text style={chamadosListStyles.itemHeading} >
                             {item.nome[0].toUpperCase()+ item.nome.slice(1)}
                         </Text>
                     </View>
@@ -21,7 +21,7 @@ export default function ChamadosList(chamados) {
                         name='trash'
                         color='red'
                         onPress={()=>deleteChamado(item)}
-                        style={styles.todoIcon} 
+                        style={chamadosListStyles.todoIcon} 
                     />
                 </Pressable>
             </View>
