@@ -1,8 +1,6 @@
-import { View, Text,FlatList,StyleSheet,Pressable } from 'react-native'
+import { View } from 'react-native'
 import React,{useState,useEffect} from 'react'
-import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { deleteChamado } from '../functions/deleteChamado';
 import { getChamados } from '../functions/getChamados';
 import FormAdd from '../components/FormAdd';
 import ChamadosList from '../components/ChamadosList';
