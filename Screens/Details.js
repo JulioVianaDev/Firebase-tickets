@@ -1,10 +1,9 @@
 import { View, Text,TextInput,StyleSheet,Pressable } from 'react-native'
 import React,{useState} from 'react'
+import { updateChamado } from '../functions/updateChamado';
 const Details = ({route}) => {
     const [nomeText,setNomeText] = useState(route.params.item.nome);
     const [ocorridoText,setOcorridoText] = useState(route.params.item.ocorrido);
-    
-    
     return (
         <View style={styles.container}>
             
@@ -22,7 +21,7 @@ const Details = ({route}) => {
             />
             <Pressable
                 style={styles.buttonUpdate}
-                onPress={()=>updateTodo(nomeText,ocorridoText)}
+                onPress={()=>updateChamado(nomeText,ocorridoText)}
             >
                 <Text>UPDATE</Text>
             </Pressable>
