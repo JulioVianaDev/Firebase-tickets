@@ -6,12 +6,13 @@ import { useNavigation } from '@react-navigation/native';
 import { addChamado } from '../functions/addChamado';
 import { deleteChamado } from '../functions/deleteChamado';
 import { chamadoRef } from '../helpers/chamadosRef';
+import { getChamados } from '../functions/getChamados';
 const Home = () => {
     const [chamados,setChamados] = useState([]);
     const [addData,setAddData] = useState({nome: '',ocorrido: ''});
     const navigation = useNavigation()
     useEffect(()=>{
-        
+        getChamados(setChamados);
     },[])
     
 
