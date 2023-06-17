@@ -3,6 +3,7 @@ import React,{useState,useEffect} from 'react'
 import {firebase} from '../config';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { addChamado } from '../functions/addChamado';
 
 const Home = () => {
     const [chamados,setChamados] = useState([]);
@@ -39,27 +40,7 @@ const Home = () => {
             })
     }
 
-    const addTodo=()=>{
-        //check se tem um todo
-        if (addData.nome && addData.nome.length>0){
-            //pegar a data
-            const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-            const data ={
-                nome: addData.nome,
-                ocorrido: addData.ocorrido,
-                createdAt: timestamp
-            }
-            chamadoRef
-                .add(data)
-                .then(()=>{
-                    setAddData({nome: '',ocorrido: ''})
-                    Keyboard.dismiss();
-                })
-                .catch((error)=>{
-                    alert(error)
-                })
-        }
-    }
+    
     return (
     <View style={{flex: 1}}>
         
@@ -82,7 +63,7 @@ const Home = () => {
                 underlineColorAndroid='transparent'
                 autoCapitalize='none'
             />
-            <TouchableOpacity style={styles.button} onPress={addTodo}>
+            <TouchableOpacity style={styles.button} onPress={addChamado}>
                 <Text style={styles.buttonText}>Add</Text>
             </TouchableOpacity>
   
