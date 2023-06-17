@@ -11,22 +11,7 @@ const Home = () => {
     const [addData,setAddData] = useState({nome: '',ocorrido: ''});
     const navigation = useNavigation()
     useEffect(()=>{
-        chamadoRef
-            .orderBy('createdAt','desc')
-            .onSnapshot(
-                querySnapShot=>{
-                    const chamados = []
-                    querySnapShot.forEach((doc)=>{
-                        const {nome,ocorrido} = doc.data()
-                        chamados.push({
-                            id: doc.id,
-                            nome,
-                            ocorrido
-                        })
-                    })
-                    setChamados(chamados)
-                }
-            )
+        
     },[])
     
 
@@ -53,7 +38,7 @@ const Home = () => {
                 underlineColorAndroid='transparent'
                 autoCapitalize='none'
             />
-            <TouchableOpacity style={styles.button} onPress={addChamado}>
+            <TouchableOpacity style={styles.button} onPress={()=>addChamado(addData,setAddData)}>
                 <Text style={styles.buttonText}>Add</Text>
             </TouchableOpacity>
   
