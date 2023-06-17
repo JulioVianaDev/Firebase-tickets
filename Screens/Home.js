@@ -96,20 +96,17 @@ const Home = () => {
                             style={styles.container}
                             onPress={()=>navigation.navigate('Details',{item})}
                         >
+                            <View stlyes={styles.innerContainer}>
+                                <Text style={styles.itemHeading} >
+                                    {item.nome[0].toUpperCase()+ item.nome.slice(1)}
+                                </Text>
+                            </View>
                             <FontAwesome
                                 name='trash'
                                 color='red'
                                 onPress={()=>deleteTodo(item)}
                                 style={styles.todoIcon} 
                             />
-                            <View stlyes={styles.innerContainer}>
-                                <Text style={styles.itemHeading} >
-                                    {item.nome[0].toUpperCase()+ item.nome.slice(1)}
-                                </Text>
-                                <Text style={styles.itemHeading} >
-                                    {item.ocorrido[0].toUpperCase()+ item.ocorrido.slice(1)}
-                                </Text>
-                            </View>
                         </Pressable>
                     </View>
                 )}
@@ -128,7 +125,8 @@ const styles = StyleSheet.create({
         margin:5,
         marginHorizontal:10,
         flexDirection: 'row',
-        alignItems:'center'
+        alignItems:'center',
+        justifyContent: 'space-between'
     },
     innerContainer:{
         alignItems: 'center',
