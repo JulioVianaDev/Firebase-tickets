@@ -1,4 +1,4 @@
-import { View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Pressable } from 'react-native'
+import { View, Text,FlatList,StyleSheet,Pressable } from 'react-native'
 import React,{useState,useEffect} from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -11,7 +11,6 @@ const Home = () => {
     useEffect(()=>{
         getChamados(setChamados);
     },[])
-    
     return (
     <View style={{flex: 1}}>
         <FormAdd/>
