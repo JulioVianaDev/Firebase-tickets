@@ -4,7 +4,8 @@ import {firebase}from '../config';
 import { useNavigation } from '@react-navigation/native';
 const Details = ({route}) => {
     const todoRef = firebase.firestore().collection('todos');
-    const [textHeading,onChangeHeadingText] = useState(route.params.item.heading);
+    const [nomeText,setNomeText] = useState(route.params.item.nome);
+    const [ocorridoText,setOcorridoText] = useState(route.params.item.ocorrido);
     const navigation = useNavigation();
     
     const updateTodo = ()=>{
@@ -27,9 +28,15 @@ const Details = ({route}) => {
             
             <TextInput
                 style={styles.textField}
-                onChangeText={onChangeHeadingText}
-                value={textHeading}
-                placeholder='Update Todo'
+                onChangeText={setNomeText}
+                value={nomeText}
+                placeholder='Nome'
+            />
+            <TextInput
+                style={styles.textField}
+                onChangeText={setOcorridoText}
+                placeholder='Descrição'
+                value={ocorridoText}
             />
             <Pressable
                 style={styles.buttonUpdate}
