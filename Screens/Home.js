@@ -4,7 +4,7 @@ import {firebase} from '../config';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { addChamado } from '../functions/addChamado';
-
+import { deleteChamado } from '../functions/deleteChamado';
 const Home = () => {
     const [chamados,setChamados] = useState([]);
     const chamadoRef = firebase.firestore().collection('chamados');
@@ -28,17 +28,7 @@ const Home = () => {
                 }
             )
     },[])
-    const deleteTodo = (todos)=>{
-        chamadoRef
-            .doc(todos.id)
-            .delete()
-            .then(()=>{
-                alert('deletado com sucesso')
-            })
-            .catch(error=>{
-                alert(error);
-            })
-    }
+    
 
     
     return (
@@ -85,7 +75,7 @@ const Home = () => {
                             <FontAwesome
                                 name='trash'
                                 color='red'
-                                onPress={()=>deleteTodo(item)}
+                                onPress={()=>deleteChamado(item)}
                                 style={styles.todoIcon} 
                             />
                         </Pressable>
