@@ -9,11 +9,12 @@ const Details = ({route}) => {
     const navigation = useNavigation();
     
     const updateTodo = ()=>{
-        if(textHeading && textHeading.length > 0){
+        if(nomeText && nomeText.length > 0){
             todoRef
                 .doc(route.params.item.id)
                 .update({
-                    heading: textHeading,
+                    ocorrido: ocorridoText,
+                    nome: nomeText
                 }).then(()=>{
                     navigation.navigate('Home')
                 })
