@@ -1,6 +1,7 @@
-export const deleteChamado = (todos)=>{
+import { chamadoRef } from "../helpers/chamadosRef";
+export const deleteChamado = (chamados)=>{
   chamadoRef
-      .doc(todos.id)
+      .doc(chamados.id)
       .delete()
       .then(()=>{
           alert('deletado com sucesso')

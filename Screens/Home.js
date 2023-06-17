@@ -5,9 +5,9 @@ import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { addChamado } from '../functions/addChamado';
 import { deleteChamado } from '../functions/deleteChamado';
+import { chamadoRef } from '../helpers/chamadosRef';
 const Home = () => {
     const [chamados,setChamados] = useState([]);
-    const chamadoRef = firebase.firestore().collection('chamados');
     const [addData,setAddData] = useState({nome: '',ocorrido: ''});
     const navigation = useNavigation()
     useEffect(()=>{
