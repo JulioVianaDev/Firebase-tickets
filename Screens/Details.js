@@ -1,6 +1,5 @@
 import { View, Text,TextInput,StyleSheet,Pressable } from 'react-native'
 import React,{useState} from 'react'
-import {firebase}from '../config';
 const Details = ({route}) => {
     const [nomeText,setNomeText] = useState(route.params.item.nome);
     const [ocorridoText,setOcorridoText] = useState(route.params.item.ocorrido);
@@ -23,7 +22,7 @@ const Details = ({route}) => {
             />
             <Pressable
                 style={styles.buttonUpdate}
-                onPress={()=>{updateTodo()}}
+                onPress={()=>updateTodo(nomeText,ocorridoText)}
             >
                 <Text>UPDATE</Text>
             </Pressable>
