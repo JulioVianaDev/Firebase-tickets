@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { deleteChamado } from '../functions/deleteChamado';
 import { getChamados } from '../functions/getChamados';
 import FormAdd from '../components/FormAdd';
+import ChamadosList from '../components/ChamadosList';
 const Home = () => {
     const [chamados,setChamados] = useState([]);
     const navigation = useNavigation()
@@ -15,30 +16,10 @@ const Home = () => {
     <View style={{flex: 1}}>
         <FormAdd/>
        
-        <FlatList
-                data={chamados}
-                numColumns={1}
-                renderItem={({item})=>(
-                    <View> 
-                        <Pressable
-                            style={styles.container}
-                            onPress={()=>navigation.navigate('Details',{item})}
-                        >
-                            <View stlyes={styles.innerContainer}>
-                                <Text style={styles.itemHeading} >
-                                    {item.nome[0].toUpperCase()+ item.nome.slice(1)}
-                                </Text>
-                            </View>
-                            <FontAwesome
-                                name='trash'
-                                color='red'
-                                onPress={()=>deleteChamado(item)}
-                                style={styles.todoIcon} 
-                            />
-                        </Pressable>
-                    </View>
-                )}
-            />
+        <ChamadosList
+            chamados={chamados}
+        
+        />
     </View>
   )
 }
