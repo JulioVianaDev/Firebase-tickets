@@ -15,10 +15,10 @@ const Home = () => {
     return (
     <View style={{flex: 1}}>
         <FormAdd/>
-       <ChamadosList
-            chamados={chamados}
-            navigation={navigation}
-       />
+        <ChamadosList
+                chamados={chamados}
+                navigation={navigation}
+        />
         <FlatList
                 data={chamados}
                 numColumns={1}
