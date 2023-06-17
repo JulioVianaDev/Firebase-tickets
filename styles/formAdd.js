@@ -31,4 +31,9 @@ export const formAddStyles = StyleSheet.create({
       color: 'white',
       fontSize:20,
   },
+  centerButton:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 })

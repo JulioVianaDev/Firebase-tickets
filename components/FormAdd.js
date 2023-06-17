@@ -25,9 +25,11 @@ const FormAdd = () => {
             underlineColorAndroid='transparent'
             autoCapitalize='none'
         />
-        <TouchableOpacity style={formAddStyles.button} onPress={()=>addChamado(addData,setAddData)}>
-            <Text style={formAddStyles.buttonText}>Add</Text>
-        </TouchableOpacity>
+        <View style={formAddStyles.centerButton}>
+          <TouchableOpacity style={formAddStyles.button} onPress={()=>addChamado(addData,setAddData)}>
+              <Text style={formAddStyles.buttonText}>Add</Text>
+          </TouchableOpacity>
+        </View>
     </View>
   )
 }
