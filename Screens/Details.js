@@ -1,11 +1,9 @@
 import { View, Text,TextInput,StyleSheet,Pressable } from 'react-native'
 import React,{useState} from 'react'
 import {firebase}from '../config';
-import { useNavigation } from '@react-navigation/native';
 const Details = ({route}) => {
     const [nomeText,setNomeText] = useState(route.params.item.nome);
     const [ocorridoText,setOcorridoText] = useState(route.params.item.ocorrido);
-    const navigation = useNavigation();
     
     
     return (
