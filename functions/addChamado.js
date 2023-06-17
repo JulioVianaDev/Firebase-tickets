@@ -1,5 +1,5 @@
 import {firebase} from '../config'
-import { chamadoRef } from '../helpers/chamadosRef';
+import { chamadosRef } from '../helpers/chamadosRef';
 import { Keyboard } from 'react-native';
 export const addChamado=(addData,setAddData)=>{
   //check se tem um todo
@@ -11,7 +11,7 @@ export const addChamado=(addData,setAddData)=>{
           ocorrido: addData.ocorrido,
           createdAt: timestamp
       }
-      chamadoRef
+      chamadosRef
           .add(data)
           .then(()=>{
               setAddData({nome: '',ocorrido: ''})

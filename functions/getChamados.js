@@ -1,7 +1,7 @@
-import { chamadoRef } from "../helpers/chamadosRef"
+import { chamadosRef } from "../helpers/chamadosRef"
 
 export function getChamados(setChamados) {
-  chamadoRef
+  chamadosRef
   .orderBy('createdAt','desc')
   .onSnapshot(
       querySnapShot=>{

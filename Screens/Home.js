@@ -5,7 +5,6 @@ import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { addChamado } from '../functions/addChamado';
 import { deleteChamado } from '../functions/deleteChamado';
-import { chamadoRef } from '../helpers/chamadosRef';
 import { getChamados } from '../functions/getChamados';
 const Home = () => {
     const [chamados,setChamados] = useState([]);
@@ -14,8 +13,6 @@ const Home = () => {
     useEffect(()=>{
         getChamados(setChamados);
     },[])
-    
-
     
     return (
     <View style={{flex: 1}}>

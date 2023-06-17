@@ -1,6 +1,6 @@
-import { chamadoRef } from "../helpers/chamadosRef";
+import { chamadosRef } from "../helpers/chamadosRef";
 export const deleteChamado = (chamados)=>{
-  chamadoRef
+  chamadosRef
       .doc(chamados.id)
       .delete()
       .then(()=>{
