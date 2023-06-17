@@ -23,7 +23,7 @@ export default function ChamadosList({chamados,navigation}) {
                         name='trash'
                         color='red'
                         onPress={()=>deleteChamado(item)}
-                        style={chamadosListStyles.todoIcon} 
+                        style={chamadosListStyles.Icon} 
                     />
                 </Pressable>
             </View>

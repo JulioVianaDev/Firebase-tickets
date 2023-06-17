@@ -21,7 +21,7 @@ export const chamadosListStyles = StyleSheet.create({
       fontSize: 18,
       marginLeft: 22
   },
-  todoIcon:{
+  Icon:{
       marginTop:5,
       fontSize: 30,
       marginLeft:14,
