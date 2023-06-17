@@ -2,12 +2,11 @@ import { View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Pressable } f
 import React,{useState,useEffect} from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { addChamado } from '../functions/addChamado';
 import { deleteChamado } from '../functions/deleteChamado';
 import { getChamados } from '../functions/getChamados';
+import FormAdd from '../components/FormAdd';
 const Home = () => {
     const [chamados,setChamados] = useState([]);
-    const [addData,setAddData] = useState({nome: '',ocorrido: ''});
     const navigation = useNavigation()
     useEffect(()=>{
         getChamados(setChamados);
@@ -15,7 +14,7 @@ const Home = () => {
     
     return (
     <View style={{flex: 1}}>
-        
+        <FormAdd/>
        
         <FlatList
                 data={chamados}
@@ -67,34 +66,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
         marginLeft: 22
-    },
-    formContainer:{
-        flexDirection: 'row',
-        height:80,
-        marginLeft:10,
-        marginRight: 10,
-        marginTop:100
-    },
-    input:{
-        height:48,
-        borderRadius:5,
-        overflow:'hidden',
-        backgroundColor:'white',
-        paddingLeft:16,
-        flex:1,
-        marginRight:5,
-    },
-    button:{
-        height:47,
-        borderRadius:5,
-        backgroundColor: '#788eec',
-        width: 80,
-        alignItems:'center',
-        justifyContent: 'center',
-    },
-    buttonText:{
-        color: 'white',
-        fontSize:20,
     },
     todoIcon:{
         marginTop:5,

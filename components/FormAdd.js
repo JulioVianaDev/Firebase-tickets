@@ -1,11 +1,14 @@
 import { View, TextInput,TouchableOpacity,Text } from 'react-native'
-import React from 'react'
+import React,{ useState }  from 'react'
+import { formAddStyles } from '../styles/formAdd'
+import { addChamado } from '../functions/addChamado';
 
 const FormAdd = () => {
+  const [addData,setAddData] = useState({nome: '',ocorrido: ''});
   return (
-    <View style={styles.formContainer}>
+    <View style={formAddStyles.formContainer}>
         <TextInput
-            style={styles.input}
+            style={formAddStyles.input}
             placeholder='Add a new todo'
             placeholderTextColor='#aaaaaa'
             onChangeText={(nome)=>setAddData({...addData,nome: nome})}
@@ -14,7 +17,7 @@ const FormAdd = () => {
             autoCapitalize='none'
         />
         <TextInput
-            style={styles.input}
+            style={formAddStyles.input}
             placeholder='Add a new todo'
             placeholderTextColor='#aaaaaa'
             onChangeText={(ocorrido)=>setAddData({...addData,ocorrido: ocorrido})}
@@ -22,8 +25,8 @@ const FormAdd = () => {
             underlineColorAndroid='transparent'
             autoCapitalize='none'
         />
-        <TouchableOpacity style={styles.button} onPress={()=>addChamado(addData,setAddData)}>
-            <Text style={styles.buttonText}>Add</Text>
+        <TouchableOpacity style={formAddStyles.button} onPress={()=>addChamado(addData,setAddData)}>
+            <Text style={formAddStyles.buttonText}>Add</Text>
         </TouchableOpacity>
     </View>
   )
