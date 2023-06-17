@@ -9,7 +9,6 @@ const Details = ({route}) => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            
             <TextInput
                 style={styles.textField}
                 onChangeText={setNomeText}
