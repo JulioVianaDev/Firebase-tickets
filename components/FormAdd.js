@@ -9,7 +9,7 @@ const FormAdd = () => {
     <View style={formAddStyles.formContainer}>
         <TextInput
             style={formAddStyles.input}
-            placeholder='Add a new todo'
+            placeholder='Nome do chamado'
             placeholderTextColor='#aaaaaa'
             onChangeText={(nome)=>setAddData({...addData,nome: nome})}
             value={addData.nome}
@@ -18,7 +18,7 @@ const FormAdd = () => {
         />
         <TextInput
             style={formAddStyles.input}
-            placeholder='Add a new todo'
+            placeholder='Descreva o ocorrido'
             placeholderTextColor='#aaaaaa'
             onChangeText={(ocorrido)=>setAddData({...addData,ocorrido: ocorrido})}
             value={addData.ocorrido}
