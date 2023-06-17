@@ -1,6 +1,5 @@
-import { View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Keyboard,Pressable } from 'react-native'
+import { View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Pressable } from 'react-native'
 import React,{useState,useEffect} from 'react'
-import {firebase} from '../config';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { addChamado } from '../functions/addChamado';
