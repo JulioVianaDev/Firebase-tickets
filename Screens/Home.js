@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     itemHeading:{
         fontWeight: 'bold',
         fontSize: 18,
-        marginRight: 22
+        marginLeft: 22
     },
     formContainer:{
         flexDirection: 'row',
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     },
     todoIcon:{
         marginTop:5,
-        fontSize: 20,
+        fontSize: 30,
         marginLeft:14,
         marginRight: 14
     }
