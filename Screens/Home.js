@@ -1,4 +1,4 @@
-import { View, Text,FlatList,StyleSheet,Pressable } from 'react-native'
+import { View} from 'react-native'
 import React,{useState,useEffect} from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { getChamados } from '../functions/getChamados';
