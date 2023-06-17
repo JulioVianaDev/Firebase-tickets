@@ -1,6 +1,8 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { chamadosListStyles } from '../styles/ChamadosList'
+import { FontAwesome } from '@expo/vector-icons';
+import { deleteChamado } from '../functions/deleteChamado';
 export default function ChamadosList(chamados) {
   return (
     <FlatList
